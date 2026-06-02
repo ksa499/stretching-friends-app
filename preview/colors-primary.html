@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="stylesheet" href="_card.css" />
+<style>
+  .sw { width:120px; height:64px; border-radius:8px; border:1px solid var(--border); }
+  .swc { display:flex; flex-direction:column; gap:6px; }
+  .nm { font-family:var(--font-sans); font-size:12px; font-weight:700; color:var(--ink); letter-spacing:-0.02em; }
+</style>
+</head>
+<body>
+<div class="card">
+  <span class="cap">Primary — one brand color, used for the single key action + active state</span>
+  <div class="row" style="gap:14px;">
+    <div class="swc"><div class="sw" style="background:var(--primary);"></div><span class="nm">Primary</span><span class="mono">#56D2FF</span></div>
+    <div class="swc"><div class="sw" style="background:var(--primary-light);"></div><span class="nm">Light · focus</span><span class="mono">#78DBFF</span></div>
+    <div class="swc"><div class="sw" style="background:var(--primary-press);"></div><span class="nm">Press</span><span class="mono">#34C4FB</span></div>
+    <div class="swc"><div class="sw" style="background:var(--primary-tint);"></div><span class="nm">Tint</span><span class="mono">#EAF9FF</span></div>
+  </div>
+</div>
+</body>
+</html>

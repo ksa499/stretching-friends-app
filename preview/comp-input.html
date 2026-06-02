@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="stylesheet" href="_card.css" />
+<style>
+  .field { width:327px; height:48px; border-radius:8px; background:var(--surface);
+           display:flex; align-items:center; gap:8px; padding:0 16px; }
+  .rest  { border:1px solid var(--border); }
+  .focus { border:2px solid var(--primary-light); padding:0 15px; }
+  .ph { font-family:var(--font-sans); font-size:14px; letter-spacing:-0.03em; color:var(--muted-500); }
+  .val { font-family:var(--font-sans); font-size:14px; letter-spacing:-0.03em; color:var(--ink); flex:1; }
+  .lbl { font-family:var(--font-ui); font-size:11px; color:var(--muted-600); }
+</style>
+</head>
+<body>
+<div class="card">
+  <span class="cap">Search input — rest, focus, filled (with clear)</span>
+  <div class="col" style="gap:4px;">
+    <div class="field rest"><i class="icon" data-icon="search" style="width:16px;height:16px;color:var(--muted-500);"></i><span class="ph">닉네임을 검색해 보세요</span></div>
+    <span class="lbl">rest · 1px #EEF0EE</span>
+  </div>
+  <div class="col" style="gap:4px;">
+    <div class="field focus"><i class="icon" data-icon="search" style="width:16px;height:16px;color:var(--muted-500);"></i><span class="val">Alex</span><i class="icon" data-icon="clear-x" style="width:10px;height:10px;color:var(--muted-500);"></i></div>
+    <span class="lbl">focus · 2px #78DBFF · ink text · ✕ clear</span>
+  </div>
+</div>
+<script src="icons.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+/* ============================================================
+   Component styles. Import once (after tokens.css + base.css):
+     import "@/design-system/styles/components.css"
+   All classes are prefixed `ds-` and reference the CSS variables
+   from tokens.css, so components render without Tailwind.
+   ============================================================ */
+
+/* ---------- Typography helpers ---------- */
+.ds-title   { font: 700 var(--ds-fs-title)/var(--ds-leading) var(--ds-font-sans); letter-spacing: var(--ds-tracking-tight); color: var(--ds-ink-strong); margin: 0; }
+.ds-name    { font: 700 var(--ds-fs-name)/var(--ds-leading) var(--ds-font-sans); letter-spacing: var(--ds-tracking-tight); color: var(--ds-ink); margin: 0; }
+.ds-meta    { font: 400 var(--ds-fs-meta)/var(--ds-leading) var(--ds-font-sans); letter-spacing: var(--ds-tracking-tight); color: var(--ds-ink-500); margin: 0; }
+.ds-section { font: 700 var(--ds-fs-label)/20px var(--ds-font-sans); letter-spacing: var(--ds-tracking-tight); color: var(--ds-muted-600); margin: 0; }
+.ds-listname{ font: 400 var(--ds-fs-body)/var(--ds-leading) var(--ds-font-sans); letter-spacing: var(--ds-tracking-tight); color: var(--ds-ink-600); margin: 0; }
+
+/* ---------- Press feedback ---------- */
+.ds-press { transition: transform .12s ease, background-color .15s ease, opacity .15s ease; }
+.ds-press:active { transform: scale(.97); }
+
+/* ---------- Button ---------- */
+.ds-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border: 0; cursor: pointer; font-family: var(--ds-font-sans); font-weight: 700;
+  letter-spacing: var(--ds-tracking-tight); white-space: nowrap;
+}
+.ds-btn--remind { height: 44px; padding: 0 16px; border-radius: var(--ds-r-md); font-size: var(--ds-fs-label); }
+.ds-btn--add    { height: 36px; padding: 0 16px; border-radius: var(--ds-r-sm); font-size: var(--ds-fs-label); }
+.ds-btn--primary  { background: var(--ds-primary); color: #fff; }
+.ds-btn--primary:hover { background: var(--ds-primary-press); }
+.ds-btn--disabled { background: var(--ds-border); color: var(--ds-muted-600); cursor: default; }
+.ds-btn--disabled:hover { background: var(--ds-border); }
+
+/* ---------- Avatar ---------- */
+.ds-avatar {
+  border-radius: var(--ds-r-full); background: var(--ds-bg); border: 1px solid var(--ds-border);
+  display: flex; align-items: flex-end; justify-content: center; overflow: hidden;
+  flex: none; color: var(--ds-muted-500);
+}
+
+/* ---------- Search field ---------- */
+.ds-field {
+  height: 48px; border-radius: var(--ds-r-md); background: var(--ds-surface);
+  display: flex; align-items: center; gap: 8px; padding: 0 16px;
+  border: 1px solid var(--ds-border);
+}
+.ds-field--focus { border: 2px solid var(--ds-primary-light); padding: 0 15px; }
+.ds-field__input {
+  flex: 1; border: 0; outline: 0; background: none;
+  font: 400 var(--ds-fs-input)/var(--ds-leading) var(--ds-font-sans);
+  letter-spacing: var(--ds-tracking-tight); color: var(--ds-ink);
+}
+.ds-field__input::placeholder { color: var(--ds-muted-500); }
+.ds-field__btn { border: 0; background: none; cursor: pointer; padding: 4px; color: var(--ds-muted-500); display: inline-flex; }
+
+/* ---------- Friend row ---------- */
+.ds-row {
+  height: 80px; padding: 0 var(--ds-gutter); display: flex; align-items: center;
+  justify-content: space-between; cursor: pointer; background: var(--ds-bg);
+}
+.ds-row__id { display: flex; align-items: center; gap: 16px; min-width: 0; }
+.ds-row__text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.ds-row--expanded { background: var(--ds-surface); }
+
+/* ---------- Action prompts (ghost cards) ---------- */
+.ds-actions { padding: 0 var(--ds-gutter) 18px; display: flex; gap: 8px; background: var(--ds-surface); }
+.ds-action {
+  flex: 1; height: 62px; border-radius: var(--ds-r-md); background: var(--ds-bg);
+  border: 1px solid var(--ds-primary); color: var(--ds-primary); cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+}
+.ds-action span { font: 700 var(--ds-fs-label)/var(--ds-leading) var(--ds-font-sans); letter-spacing: var(--ds-tracking-tight); }
+@keyframes ds-expand { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+.ds-actions--anim { animation: ds-expand .2s ease both; }
+
+/* ---------- Bottom nav ---------- */
+.ds-nav {
+  flex: none; height: 81px; background: var(--ds-bg); border-top: 1px solid var(--ds-border);
+  display: flex; justify-content: space-between; padding: 12px var(--ds-gutter) 32px;
+}
+.ds-nav__tab {
+  border: 0; background: none; cursor: pointer; padding: 0; width: 44px;
+  display: flex; flex-direction: column; align-items: center; gap: 4px; color: var(--ds-muted-600);
+}
+.ds-nav__tab--active { color: var(--ds-primary); }
+.ds-nav__label { font: 700 var(--ds-fs-nav)/15px var(--ds-font-ui); letter-spacing: var(--ds-tracking-ui); }
+
+/* ---------- List rows (search results / recent) ---------- */
+.ds-result {
+  height: 68px; display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid var(--ds-border);
+}
+.ds-result:last-child, .ds-result--last { border-bottom: 0; }
+.ds-result__id { display: flex; align-items: center; gap: 16px; }
+.ds-recent {
+  height: 64px; display: flex; align-items: center; gap: 16px;
+  border-bottom: 1px solid var(--ds-border);
+}
+.ds-recent--last { border-bottom: 0; }
+
+/* ---------- Empty state ---------- */
+.ds-empty {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 16px; padding: 60px var(--ds-gutter); text-align: center;
+}
+.ds-empty__icon {
+  width: 64px; height: 64px; border-radius: var(--ds-r-full); background: var(--ds-border);
+  display: flex; align-items: center; justify-content: center; color: var(--ds-muted-400);
+}
+.ds-empty__title { font: 700 var(--ds-fs-name)/var(--ds-leading) var(--ds-font-sans); letter-spacing: var(--ds-tracking-tight); color: var(--ds-muted-700); margin: 0; }
+.ds-empty__sub   { font: 400 var(--ds-fs-label)/var(--ds-leading) var(--ds-font-sans); letter-spacing: var(--ds-tracking-tight); color: var(--ds-muted-500); margin: 0; }
+
+/* ---------- Toast ---------- */
+.ds-toast {
+  position: absolute; left: 50%; bottom: 104px; transform: translateX(-50%) translateY(8px);
+  background: rgba(28, 34, 31, .92); color: #fff; font-size: 13px; font-weight: 600;
+  letter-spacing: -.02em; padding: 11px 18px; border-radius: var(--ds-r-full);
+  box-shadow: var(--ds-shadow-float); opacity: 0; pointer-events: none; white-space: nowrap;
+  display: flex; align-items: center; gap: 8px;
+  transition: opacity .22s ease, transform .22s cubic-bezier(.2,.7,.3,1);
+}
+.ds-toast--show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ---------- Header ---------- */
+.ds-header {
+  flex: none; height: 88px; padding: 0 var(--ds-gutter); display: flex;
+  align-items: center; justify-content: space-between; border-bottom: 1px solid var(--ds-border);
+}
+.ds-header--search { height: 82px; padding: 0 16px; gap: 16px; justify-content: flex-start; }
+.ds-iconbtn { border: 0; background: none; cursor: pointer; padding: 8px; display: inline-flex; }
+
+/* ---------- Screen / phone scaffolding (demo helpers) ---------- */
+.ds-screen { display: flex; flex-direction: column; height: 100%; background: var(--ds-bg); }
+.ds-scroll { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+.ds-scroll::-webkit-scrollbar { width: 0; }
+.ds-phone {
+  width: 375px; height: 812px; background: var(--ds-bg); border-radius: 44px; position: relative;
+  overflow: hidden; display: flex; flex-direction: column;
+  box-shadow: 0 30px 80px rgba(20,28,24,.32), 0 0 0 11px #14181a, 0 0 0 13px #2b3033;
+}

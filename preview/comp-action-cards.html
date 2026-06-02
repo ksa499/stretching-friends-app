@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="stylesheet" href="_card.css" />
+<style>
+  .ghost { flex:1; height:62px; border-radius:8px; background:var(--bg); border:1px solid var(--primary);
+           display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; color:var(--primary); }
+  .ghost span { font-family:var(--font-sans); font-weight:700; font-size:14px; letter-spacing:-0.03em; color:var(--primary); }
+</style>
+</head>
+<body>
+<div class="card" style="background:var(--surface);">
+  <span class="cap">Action prompts — ghost cards revealed when a friend row expands</span>
+  <div class="row" style="gap:8px; flex-wrap:nowrap;">
+    <div class="ghost">
+      <i class="icon" data-icon="posture-up" style="width:18px;height:14px;"></i>
+      <span>스트레칭 하세요!</span>
+    </div>
+    <div class="ghost">
+      <i class="icon" data-icon="posture-together" style="width:11px;height:14px;"></i>
+      <span>스트레칭 같이해요</span>
+    </div>
+  </div>
+</div>
+<script src="icons.js"></script>
+</body>
+</html>

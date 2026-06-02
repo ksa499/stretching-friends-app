@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="stylesheet" href="_card.css" />
+<style>
+  .bar { height:28px; background:var(--primary-tint); border:1px solid var(--primary-light); border-radius:4px; display:flex; align-items:center; justify-content:center; }
+  .nm { font-family:var(--font-sans); font-size:12px; font-weight:700; color:var(--ink); letter-spacing:-0.02em; min-width:120px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <span class="cap">Spacing scale — used for gutters, gaps and row padding</span>
+  <div class="row"><span class="nm">Gutter · 24</span><div class="bar" style="width:24px;"></div><span class="mono">page horizontal padding</span></div>
+  <div class="row"><span class="nm">Row pad · 16</span><div class="bar" style="width:16px;"></div><span class="mono">list-row vertical padding · default gap</span></div>
+  <div class="row"><span class="nm">Gap · 8</span><div class="bar" style="width:8px;"></div><span class="mono">icon ↔ label</span></div>
+  <div class="row"><span class="nm">Tight · 4</span><div class="bar" style="width:4px;"></div><span class="mono">nav icon ↔ label</span></div>
+</div>
+</body>
+</html>

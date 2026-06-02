@@ -1,0 +1,196 @@
+/* ============================================================
+   Stretching App — Design Tokens
+   Colors + Typography foundations, extracted from the Figma
+   "친구 (Friends)" feature. rgb() originals noted in comments.
+   ============================================================ */
+
+/* ---- Fonts ----
+   Pretendard: primary UI typeface (Korean + Latin).
+   Served from the official orioncactus CDN (dynamic subset).
+   Inter: used only for the tiny bottom-nav labels + numerics. */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+:root {
+  /* ---------- Brand / Primary ---------- */
+  --primary:          #56D2FF;  /* rgb(86,210,255)  — buttons, active nav, accents */
+  --primary-light:    #78DBFF;  /* rgb(120,219,255) — focused input border */
+  --primary-press:    #34C4FB;  /* derived — pressed/hover on primary */
+  --primary-tint:     #EAF9FF;  /* derived — faint cyan wash (selected rows, chips) */
+
+  /* ---------- Ink (text) ---------- */
+  --ink-strong:       #000000;  /* rgb(0,0,0)      — page titles, back chevron */
+  --ink:              #222222;  /* rgb(34,34,34)   — names, primary body */
+  --ink-600:          #4B5563;  /* rgb(75,85,99)   — list names in search */
+  --ink-500:          #6B7280;  /* rgb(107,114,128)— meta / status line */
+
+  /* ---------- Muted / Neutrals (subtle green-grey) ---------- */
+  --muted-700:        #868F89;  /* rgb(134,143,137)— empty-state heading */
+  --muted-600:        #A8B2AB;  /* rgb(168,178,171)— section labels, inactive nav, placeholder */
+  --muted-500:        #B9C2BC;  /* rgb(185,194,188)— icons, placeholder text, avatar glyph */
+  --muted-400:        #CBD1CD;  /* rgb(203,209,205)— empty-state illustration glyph */
+
+  /* ---------- Surfaces ---------- */
+  --bg:               #FFFFFF;  /* app background, cards, nav bar */
+  --surface:          #F6F8F6;  /* rgb(246,248,246)— input fields, expanded/selected row */
+  --border:           #EEF0EE;  /* rgb(238,240,238)— hairlines, disabled fills, avatar ring */
+
+  /* ============================================================
+     SEMANTIC TOKENS  (role-based aliases of the primitives above)
+     Use THESE in product code, not the raw primitives.
+     ============================================================ */
+
+  /* --- Text --- */
+  --text-primary:      var(--ink);         /* #222 names, body */
+  --text-secondary:    var(--ink-500);     /* #6B7280 meta / status */
+  --text-tertiary:     var(--muted-500);   /* #B9C2BC placeholder, hints */
+  --text-disabled:     var(--muted-600);   /* #A8B2AB */
+  --text-on-primary:   #FFFFFF;            /* text on cyan fills */
+  --text-link:         var(--primary);     /* actionable text */
+
+  /* --- Surface / background --- */
+  --surface-canvas:    var(--bg);          /* #FFF app + cards */
+  --surface-subtle:    var(--surface);     /* #F6F8F6 inputs, selected row */
+  --surface-disabled:  var(--border);      /* #EEF0EE disabled fills */
+  --surface-action:    var(--primary);     /* primary button */
+  --surface-action-hover: var(--primary-press);
+  --surface-action-subtle: var(--primary-tint); /* #EAF9FF chips, washes */
+
+  /* --- Border --- */
+  --border-default:    var(--border);      /* #EEF0EE hairlines */
+  --border-strong:     var(--muted-500);   /* #B9C2BC */
+  --border-focus:      var(--primary-light); /* #78DBFF focused input */
+  --border-action:     var(--primary);     /* ghost button outline */
+
+  /* --- Action / interactive --- */
+  --action-primary:        var(--primary);
+  --action-primary-hover:  var(--primary-press);
+  --action-on-primary:     #FFFFFF;
+  --action-disabled-bg:    var(--border);
+  --action-disabled-fg:    var(--muted-600);
+  --action-ghost-fg:       var(--primary);
+  --action-ghost-border:   var(--primary);
+
+  /* --- Presence / status ---
+     Cyan = info (in-source). The green/amber/red status hues are NOT in
+     the Figma — proposed defaults for a friends/presence feature, tuned to
+     the muted, green-leaning palette. Swap for brand values when defined. */
+  --status-info:       var(--primary);     /* #56D2FF  (in source) */
+  --status-online:     #57C98A;            /* proposed — "Active now" */
+  --status-away:       #E0B23C;            /* proposed — "Away" */
+  --status-danger:     #E5736B;            /* proposed — errors / destructive */
+  --status-info-tint:    var(--primary-tint);
+  --status-online-tint:  #E8F6EE;
+  --status-away-tint:    #FBF3DE;
+  --status-danger-tint:  #FBECEA;
+
+  /* --- Component shorthands (kept for back-compat) --- */
+  --btn-primary-bg:   var(--action-primary);
+  --btn-primary-fg:   var(--action-on-primary);
+  --btn-disabled-bg:  var(--action-disabled-bg);
+  --btn-disabled-fg:  var(--action-disabled-fg);
+  --btn-ghost-border: var(--action-ghost-border);
+  --btn-ghost-fg:     var(--action-ghost-fg);
+
+  /* ---------- Typography ---------- */
+  --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+               "Malgun Gothic", "Segoe UI", system-ui, sans-serif;
+  --font-ui:   "Inter", var(--font-sans);
+
+  --tracking-tight: -0.030em;  /* Pretendard default across the app */
+  --tracking-ui:    -0.023em;  /* Inter nav labels */
+  --leading:        1.4;       /* line-height used almost everywhere */
+
+  /* type ramp (px) */
+  --fs-title:   24px;  /* Bold   — page titles (친구 / 검색) */
+  --fs-name:    16px;  /* Bold/Semibold — friend names */
+  --fs-body:    16px;  /* Regular — search list names */
+  --fs-label:   14px;  /* Bold   — buttons, section labels */
+  --fs-input:   14px;  /* Regular — input value/placeholder */
+  --fs-meta:    12px;  /* Regular — status line (Active now) */
+  --fs-nav:     10px;  /* Bold (Inter) — bottom-nav labels */
+
+  /* ---------- Radii ---------- */
+  --r-sm:   6px;    /* small buttons (친구 추가) */
+  --r-md:   8px;    /* inputs, primary buttons, action cards */
+  --r-full: 9999px; /* avatars, pills */
+
+  /* ---------- Spacing ---------- */
+  --gutter:  24px;  /* horizontal page padding */
+  --row-pad: 16px;  /* vertical list-row padding */
+  --gap:     16px;  /* default element gap */
+
+  /* ---------- Elevation ---------- */
+  /* The app is almost flat — separation comes from hairline borders
+     and the #F6F8F6 surface tint, not drop shadows. One soft shadow
+     is reserved for transient/floating elements (toasts, sheets). */
+  --shadow-float: 0 8px 24px rgba(34, 41, 38, 0.12);
+  --shadow-nav:   0 -1px 0 var(--border);  /* nav bar top hairline */
+}
+
+/* ============================================================
+   Semantic type classes
+   ============================================================ */
+.t-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--fs-title);
+  line-height: var(--leading);
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink-strong);
+}
+.t-name {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--fs-name);
+  line-height: var(--leading);
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink);
+}
+.t-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-body);
+  line-height: var(--leading);
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink-600);
+}
+.t-label {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  line-height: var(--leading);
+  letter-spacing: var(--tracking-tight);
+}
+.t-input {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-input);
+  line-height: var(--leading);
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink);
+}
+.t-meta {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-meta);
+  line-height: var(--leading);
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink-500);
+}
+.t-section {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  line-height: 20px;
+  letter-spacing: var(--tracking-tight);
+  color: var(--muted-600);
+}
+.t-nav {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: var(--fs-nav);
+  line-height: 15px;
+  letter-spacing: var(--tracking-ui);
+  color: var(--muted-600);
+}

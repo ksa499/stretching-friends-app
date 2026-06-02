@@ -1,0 +1,97 @@
+/* ============================================================
+   Stretching App — Design Tokens (CSS custom properties)
+   Import once at your app root:  import "@/design-system/styles/tokens.css"
+   ============================================================ */
+
+:root {
+  /* ---------- Brand / Primary ---------- */
+  --ds-primary:        #56D2FF;
+  --ds-primary-light:  #78DBFF;
+  --ds-primary-press:  #34C4FB;
+  --ds-primary-tint:   #EAF9FF;
+
+  /* ---------- Ink (text) ---------- */
+  --ds-ink-strong:     #000000;
+  --ds-ink:            #222222;
+  --ds-ink-600:        #4B5563;
+  --ds-ink-500:        #6B7280;
+
+  /* ---------- Muted / Neutrals (green-tinted greys) ---------- */
+  --ds-muted-700:      #868F89;
+  --ds-muted-600:      #A8B2AB;
+  --ds-muted-500:      #B9C2BC;
+  --ds-muted-400:      #CBD1CD;
+
+  /* ---------- Surfaces ---------- */
+  --ds-bg:             #FFFFFF;
+  --ds-surface:        #F6F8F6;
+  --ds-border:         #EEF0EE;
+
+  /* ---------- Typography ---------- */
+  --ds-font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+                  "Malgun Gothic", "Segoe UI", system-ui, sans-serif;
+  --ds-font-ui:   "Inter", var(--ds-font-sans);
+
+  --ds-tracking-tight: -0.030em;
+  --ds-tracking-ui:    -0.023em;
+  --ds-leading:        1.4;
+
+  --ds-fs-title: 24px;
+  --ds-fs-name:  16px;
+  --ds-fs-body:  16px;
+  --ds-fs-label: 14px;
+  --ds-fs-input: 14px;
+  --ds-fs-meta:  12px;
+  --ds-fs-nav:   10px;
+
+  /* ---------- Radii ---------- */
+  --ds-r-sm:   6px;
+  --ds-r-md:   8px;
+  --ds-r-full: 9999px;
+
+  /* ---------- Spacing ---------- */
+  --ds-gutter:  24px;
+  --ds-row-pad: 16px;
+  --ds-gap:     16px;
+
+  /* ---------- Elevation ---------- */
+  --ds-shadow-float: 0 8px 24px rgba(34, 41, 38, 0.12);
+
+  /* ============================================================
+     SEMANTIC TOKENS — role-based aliases. Prefer these in product code.
+     ============================================================ */
+  /* text */
+  --ds-text-primary:   var(--ds-ink);
+  --ds-text-secondary: var(--ds-ink-500);
+  --ds-text-tertiary:  var(--ds-muted-500);
+  --ds-text-disabled:  var(--ds-muted-600);
+  --ds-text-on-primary:#FFFFFF;
+  --ds-text-link:      var(--ds-primary);
+  /* surface */
+  --ds-surface-canvas:        var(--ds-bg);
+  --ds-surface-subtle:        var(--ds-surface);
+  --ds-surface-disabled:      var(--ds-border);
+  --ds-surface-action:        var(--ds-primary);
+  --ds-surface-action-hover:  var(--ds-primary-press);
+  --ds-surface-action-subtle: var(--ds-primary-tint);
+  /* border */
+  --ds-border-default: var(--ds-border);
+  --ds-border-strong:  var(--ds-muted-500);
+  --ds-border-focus:   var(--ds-primary-light);
+  --ds-border-action:  var(--ds-primary);
+  /* action */
+  --ds-action-primary:       var(--ds-primary);
+  --ds-action-primary-hover: var(--ds-primary-press);
+  --ds-action-on-primary:    #FFFFFF;
+  --ds-action-disabled-bg:   var(--ds-border);
+  --ds-action-disabled-fg:   var(--ds-muted-600);
+  /* presence / status — green/amber/red are proposed (not in source Figma) */
+  --ds-status-info:        var(--ds-primary);
+  --ds-status-online:      #57C98A;
+  --ds-status-away:        #E0B23C;
+  --ds-status-danger:      #E5736B;
+  --ds-status-info-tint:   var(--ds-primary-tint);
+  --ds-status-online-tint: #E8F6EE;
+  --ds-status-away-tint:   #FBF3DE;
+  --ds-status-danger-tint: #FBECEA;
+}

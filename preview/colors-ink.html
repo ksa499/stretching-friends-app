@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="stylesheet" href="_card.css" />
+<style>
+  .sw { width:120px; height:64px; border-radius:8px; border:1px solid var(--border); }
+  .swc { display:flex; flex-direction:column; gap:6px; }
+  .nm { font-family:var(--font-sans); font-size:12px; font-weight:700; color:var(--ink); letter-spacing:-0.02em; }
+</style>
+</head>
+<body>
+<div class="card">
+  <span class="cap">Ink — text from strongest to lightest</span>
+  <div class="row" style="gap:14px;">
+    <div class="swc"><div class="sw" style="background:var(--ink-strong);"></div><span class="nm">Ink strong</span><span class="mono">#000000</span></div>
+    <div class="swc"><div class="sw" style="background:var(--ink);"></div><span class="nm">Ink · names</span><span class="mono">#222222</span></div>
+    <div class="swc"><div class="sw" style="background:var(--ink-600);"></div><span class="nm">Ink 600</span><span class="mono">#4B5563</span></div>
+    <div class="swc"><div class="sw" style="background:var(--ink-500);"></div><span class="nm">Ink 500 · meta</span><span class="mono">#6B7280</span></div>
+  </div>
+</div>
+</body>
+</html>

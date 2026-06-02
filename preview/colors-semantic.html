@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="stylesheet" href="_card.css" />
+<style>
+  .grp { display:flex; flex-direction:column; gap:8px; }
+  .grp > .cap { margin-bottom:2px; }
+  .toks { display:flex; gap:10px; flex-wrap:wrap; }
+  .tok { display:flex; align-items:center; gap:8px; }
+  .chip { width:22px; height:22px; border-radius:6px; border:1px solid var(--border); flex:none; }
+  .tk { font-family:ui-monospace,"SF Mono",Menlo,monospace; font-size:11px; color:var(--ink-600); }
+</style>
+</head>
+<body>
+<div class="card" style="gap:18px;">
+  <span class="cap">Semantic tokens — role-based aliases used in product code</span>
+
+  <div class="grp">
+    <span class="cap">Action</span>
+    <div class="toks">
+      <div class="tok"><span class="chip" style="background:var(--action-primary);"></span><span class="tk">action-primary</span></div>
+      <div class="tok"><span class="chip" style="background:var(--action-primary-hover);"></span><span class="tk">action-primary-hover</span></div>
+      <div class="tok"><span class="chip" style="background:var(--surface-action-subtle);"></span><span class="tk">action-subtle</span></div>
+      <div class="tok"><span class="chip" style="background:var(--action-disabled-bg);"></span><span class="tk">action-disabled</span></div>
+    </div>
+  </div>
+
+  <div class="grp">
+    <span class="cap">Text &nbsp;·&nbsp; Surface &nbsp;·&nbsp; Border</span>
+    <div class="toks">
+      <div class="tok"><span class="chip" style="background:var(--text-primary);"></span><span class="tk">text-primary</span></div>
+      <div class="tok"><span class="chip" style="background:var(--text-secondary);"></span><span class="tk">text-secondary</span></div>
+      <div class="tok"><span class="chip" style="background:var(--text-tertiary);"></span><span class="tk">text-tertiary</span></div>
+      <div class="tok"><span class="chip" style="background:var(--surface-subtle);"></span><span class="tk">surface-subtle</span></div>
+      <div class="tok"><span class="chip" style="background:var(--border-focus);"></span><span class="tk">border-focus</span></div>
+    </div>
+  </div>
+
+  <div class="grp">
+    <span class="cap">Status / presence &nbsp;<span style="color:var(--muted-500)">(green/amber/red proposed — not in source)</span></span>
+    <div class="toks">
+      <div class="tok"><span class="chip" style="background:var(--status-info);"></span><span class="tk">info</span></div>
+      <div class="tok"><span class="chip" style="background:var(--status-online);"></span><span class="tk">online</span></div>
+      <div class="tok"><span class="chip" style="background:var(--status-away);"></span><span class="tk">away</span></div>
+      <div class="tok"><span class="chip" style="background:var(--status-danger);"></span><span class="tk">danger</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="stylesheet" href="_card.css" />
+<style>
+  .es { display:flex; flex-direction:column; align-items:center; gap:16px; flex:1; }
+  .circle { width:64px; height:64px; border-radius:9999px; background:var(--border);
+            display:flex; align-items:center; justify-content:center; color:var(--muted-400); }
+  .circle .icon { width:32px; height:25px; opacity:.7; }
+  .es h3 { margin:0; font-family:var(--font-sans); font-weight:700; font-size:16px; letter-spacing:-0.03em; color:var(--muted-700); }
+  .es p { margin:0; font-family:var(--font-sans); font-size:14px; letter-spacing:-0.03em; color:var(--muted-500); }
+</style>
+</head>
+<body>
+<div class="card">
+  <span class="cap">Empty states — instructive heading + how-to sub-line</span>
+  <div class="row" style="gap:48px; align-items:flex-start; justify-content:center;">
+    <div class="es">
+      <div class="circle"><i class="icon" data-icon="people-empty"></i></div>
+      <h3>친구를 추가해보세요</h3>
+      <p>추가할 친구의 ID를 검색해 보세요.</p>
+    </div>
+    <div class="es">
+      <div class="circle"><i class="icon" data-icon="people-empty"></i></div>
+      <h3>사용자가 없습니다</h3>
+      <p>다른 ID로 검색해 보세요</p>
+    </div>
+  </div>
+</div>
+<script src="icons.js"></script>
+</body>
+</html>

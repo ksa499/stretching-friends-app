@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="stylesheet" href="_card.css" />
+<style>
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px;
+         font-family:var(--font-sans); font-weight:700; letter-spacing:-0.03em; border:0; }
+  .btn-primary { height:44px; padding:0 16px; border-radius:8px; background:var(--primary); color:#fff; font-size:14px; }
+  .btn-press   { height:44px; padding:0 16px; border-radius:8px; background:var(--primary-press); color:#fff; font-size:14px; }
+  .btn-disabled{ height:44px; padding:0 16px; border-radius:8px; background:var(--border); color:var(--muted-600); font-size:14px; }
+  .btn-add     { height:36px; padding:0 16px; border-radius:6px; background:var(--primary); color:#fff; font-size:14px; }
+  .btn-pending { height:36px; padding:0 16px; border-radius:6px; background:var(--border); color:var(--muted-600); font-size:14px; }
+  .lbl { font-family:var(--font-ui); font-size:11px; color:var(--muted-600); margin-top:6px; }
+  .u { display:flex; flex-direction:column; align-items:center; }
+</style>
+</head>
+<body>
+<div class="card">
+  <span class="cap">Buttons — primary action (44px) and add-friend (36px), with states</span>
+  <div class="row" style="gap:22px;">
+    <div class="u"><button class="btn btn-primary"><i class="icon" data-icon="remind-bell" style="width:13px;height:15px;"></i>알림보내기</button><span class="lbl">primary</span></div>
+    <div class="u"><button class="btn btn-press"><i class="icon" data-icon="remind-bell" style="width:13px;height:15px;"></i>알림보내기</button><span class="lbl">press / hover</span></div>
+    <div class="u"><button class="btn btn-disabled"><i class="icon" data-icon="remind-bell" style="width:13px;height:15px;"></i>알림보내기</button><span class="lbl">disabled</span></div>
+  </div>
+  <div class="row" style="gap:22px;">
+    <div class="u"><button class="btn btn-add">친구 추가</button><span class="lbl">add friend</span></div>
+    <div class="u"><button class="btn btn-pending">처리중</button><span class="lbl">pending</span></div>
+  </div>
+</div>
+<script src="icons.js"></script>
+</body>
+</html>
