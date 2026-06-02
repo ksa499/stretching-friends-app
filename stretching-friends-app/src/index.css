@@ -1,11 +1,10 @@
-/* App-level layout — centers the phone on a neutral stage. */
-html, body, #root { height: 100%; margin: 0; }
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: var(--ds-bg, #fff);
+}
 
-.stage {
-  min-height: 100vh;
+#root {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #d8dcd9;
-  padding: 24px;
+  flex-direction: column;
 }

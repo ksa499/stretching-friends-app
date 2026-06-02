@@ -26,15 +26,9 @@ function Placeholder({ label }: { label: string }) {
 }
 
 export interface FriendsAppProps {
-  /** wrap in the iPhone phone shell (demo). Set false to fill the parent. */
   phoneFrame?: boolean;
 }
 
-/**
- * Assembled, interactive demo of the Friends feature:
- * list ⇄ search, expandable rows, reminder + add-friend flows, toast, nav.
- * Use as a reference for wiring the components into a real app.
- */
 export function FriendsApp({ phoneFrame = true }: FriendsAppProps) {
   const [tab, setTab] = React.useState("friends");
   const [search, setSearch] = React.useState(false);
@@ -66,23 +60,38 @@ export function FriendsApp({ phoneFrame = true }: FriendsAppProps) {
     body = <Placeholder label={TAB_LABELS[tab]} />;
   }
 
-  const content = (
-    <>
+  if (!phoneFrame) {
+    return (
+      <div
+        className="ds-root"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          height: "100%",
+          background: "var(--ds-bg)",
+          paddingTop: "env(safe-area-inset-top)",
+        }}
+      >
+        <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0 }}>
+          {body}
+          {!search && (
+            <BottomNav active={tab} onSelect={(k) => { setSearch(false); setTab(k); }} />
+          )}
+        </div>
+        <Toast show={toast.show} message={toast.msg} />
+      </div>
+    );
+  }
+
+  return (
+    <div className="ds-root ds-phone">
       <StatusBar />
       <div style={{ position: "absolute", inset: "47px 0 0", display: "flex", flexDirection: "column" }}>
         {body}
         {!search && <BottomNav active={tab} onSelect={(k) => { setSearch(false); setTab(k); }} />}
       </div>
       <Toast show={toast.show} message={toast.msg} />
-    </>
-  );
-
-  if (!phoneFrame) {
-    return <div className="ds-root" style={{ position: "relative", height: "100%", background: "var(--ds-bg)" }}>{content}</div>;
-  }
-
-  return (
-    <div className="ds-root ds-phone">{content}</div>
+    </div>
   );
 }
 

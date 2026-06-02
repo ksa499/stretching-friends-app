@@ -73,8 +73,9 @@
 
 /* ---------- Bottom nav ---------- */
 .ds-nav {
-  flex: none; height: 81px; background: var(--ds-bg); border-top: 1px solid var(--ds-border);
-  display: flex; justify-content: space-between; padding: 12px var(--ds-gutter) 32px;
+  flex: none; background: var(--ds-bg); border-top: 1px solid var(--ds-border);
+  display: flex; justify-content: space-between;
+  padding: 12px var(--ds-gutter) max(32px, env(safe-area-inset-bottom));
 }
 .ds-nav__tab {
   border: 0; background: none; cursor: pointer; padding: 0; width: 44px;
